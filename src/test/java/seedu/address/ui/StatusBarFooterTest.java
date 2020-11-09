@@ -1,21 +1,18 @@
 package seedu.address.ui;
 
-import javafx.application.Application;
-import javafx.application.Platform;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-import javafx.stage.Stage;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
-import seedu.address.model.module.Module;
-import seedu.address.testutil.TypicalModules;
-
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.List;
-
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+
+import java.nio.file.Paths;
+
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
+
+import javafx.application.Application;
+import javafx.application.Platform;
+import javafx.stage.Stage;
+import seedu.address.model.module.Module;
+import seedu.address.testutil.TypicalModules;
 
 public class StatusBarFooterTest {
 
