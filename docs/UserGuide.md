@@ -178,7 +178,7 @@ Command | Format
 `su` | `su MODULE_CODE`
 `delete` | `delete MODULE_CODE`
 `done` | `done`
-`find` | `find KEYWORD`
+`find` | `find KEYWORD [KEYWORD]...`
 `progress` | `progress [ddp]`
 `clear` | `clear`
 `help` | `help`
