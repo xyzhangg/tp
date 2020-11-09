@@ -194,7 +194,7 @@ It implements the following operation:
 Given below is an example usage scenario and how obtaining module information is used and integrated into
 the ```add``` command.
 
-Step 1: The users executes ```add m/CS1101S g/A+```.
+Step 1: The user executes ```add m/CS1101S g/A+```.
 
 Step 2: Logic uses the ```AddCommandParser``` class to parse the command.
 ```AddCommandParser#parse(“add m/CS1101S g/A+”)``` is executed, which then executes
