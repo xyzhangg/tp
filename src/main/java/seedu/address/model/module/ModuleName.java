@@ -10,7 +10,7 @@ import static seedu.address.commons.util.AppUtil.checkArgument;
 public class ModuleName {
 
     public static final String MESSAGE_CONSTRAINTS =
-            "Module code should only contain alphanumeric characters and spaces, and it should not be blank";
+            "Module codes should only contain alphanumeric characters, and it should not be blank";
 
     /*
      * The first character of the address must not be a whitespace,
@@ -35,7 +35,7 @@ public class ModuleName {
      * Returns true if a given string is a valid modName.
      */
     public static boolean isValidModName(String test) {
-        return test.matches(VALIDATION_REGEX);
+        return test.matches(VALIDATION_REGEX) && !test.contains(" ");
     }
 
 

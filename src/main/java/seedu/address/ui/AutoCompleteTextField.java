@@ -40,9 +40,7 @@ public class AutoCompleteTextField extends TextField {
 
         textProperty().addListener((observableValue, s, s2) -> {
             if (getText().length() == 0
-                || Arrays.asList(getEntries().stream().map(String::trim).toArray()).contains(getText())
-                    || Arrays.asList(getEntries().stream().map(string -> string.trim() + " ")
-                        .toArray()).contains(getText())) {
+                || Arrays.asList(getEntries().stream().map(String::trim).toArray()).contains(getText().trim())) {
                 entriesPopup.hide();
             } else {
                 LinkedList<String> searchResult = new LinkedList<>();

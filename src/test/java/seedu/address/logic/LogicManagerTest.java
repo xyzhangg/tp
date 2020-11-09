@@ -18,6 +18,7 @@ import org.junit.jupiter.api.io.TempDir;
 
 import seedu.address.logic.commands.AddCommand;
 import seedu.address.logic.commands.CommandResult;
+import seedu.address.logic.commands.DeleteCommand;
 import seedu.address.logic.commands.ListCommand;
 import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.logic.parser.exceptions.ParseException;
@@ -27,6 +28,7 @@ import seedu.address.model.ReadOnlyGradeBook;
 import seedu.address.model.UserPrefs;
 import seedu.address.model.module.GoalTarget;
 import seedu.address.model.module.Module;
+import seedu.address.model.module.ModuleName;
 import seedu.address.model.semester.Semester;
 import seedu.address.storage.JsonGradeBookStorage;
 import seedu.address.storage.JsonUserPrefsStorage;
@@ -58,10 +60,18 @@ public class LogicManagerTest {
     }
 
     @Test
+    public void execute_invalidModuleCode_throwsParseException() {
+        setValidCorrectSemester();
+
+        String deleteCommand = DeleteCommand.COMMAND_WORD + " cs 2 100";
+        assertParseException(deleteCommand, ModuleName.MESSAGE_CONSTRAINTS);
+    }
+
+    @Test
     public void execute_commandExecutionError_throwsCommandException() {
         setValidCorrectSemester();
 
-        String deleteCommand = "delete some mod";
+        String deleteCommand = DeleteCommand.COMMAND_WORD + " cs";
         assertCommandException(deleteCommand, MESSAGE_INVALID_MODULE_DISPLAYED_NAME);
     }
 

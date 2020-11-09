@@ -3,9 +3,9 @@ layout: page
 title: Zhang Xin Yue's Project Portfolio Page
 ---
 
-## Project: MyMod
+## Project: MyMods
 
-MyMod is a desktop mod tracking application used for tracking mods in NUS.
+MyMods is a desktop mod tracking application used for tracking mods in NUS.
 The user interacts with it using a CLI, and it has a GUI created with JavaFX. It is written in Java, and has about 10 kLoC.
 
 Given below are my contributions to the project.
@@ -30,10 +30,11 @@ Given below are my contributions to the project.
 
 * **Documentation**:
   * User Guide:
-    * Added documentation for the features `progress`, `help` and `exit`.
+    * Added documentation for the features `progress`, `help` and `exit`(No PR by me as we typed collectively in Google Docs and pushed by one person)
   * Developer Guide:
-    * Added implementation details of the `progress` feature. (Pull requests [\#93](https://github.com/AY2021S1-CS2103T-T17-1/tp/pull/93))
+    * Added implementation details of the `progress` feature. (Pull requests [\#93](https://github.com/AY2021S1-CS2103T-T17-1/tp/pull/93), [\#257](https://github.com/AY2021S1-CS2103T-T17-1/tp/pull/257))
+    * Added sequence diagram for Logic component (Pull requests [\#257](https://github.com/AY2021S1-CS2103T-T17-1/tp/pull/257))
 
 * **Community**:
-  * PRs reviewed: 22
+  * PRs reviewed: 29
   * Reported bugs and suggestions for other teams during PE-D: 7 issues

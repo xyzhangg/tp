@@ -262,7 +262,7 @@ public class MainWindow extends UiPart<Stage> {
                 capBox.setCapDisplay(logic.generateCap());
             }
             if (commandResult.isList() || commandResult.isRecommendSu() || commandResult.isFind()) {
-                moduleListPanel = new ModuleListPanel(logic.getFilteredModuleList());
+                moduleListPanel = new ModuleListPanel(logic.sortModuleListBySem());
             } else {
                 moduleListPanel = new ModuleListPanel(logic.filterModuleListBySem());
             }

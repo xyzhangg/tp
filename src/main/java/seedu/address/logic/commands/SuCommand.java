@@ -2,9 +2,8 @@ package seedu.address.logic.commands;
 
 import seedu.address.model.module.ModuleName;
 
-
 /**
- * SUs the module indicated
+ * SUs the module indicated.
  */
 public class SuCommand extends UpdateCommand {
     public static final String COMMAND_WORD = "su";
@@ -21,5 +20,10 @@ public class SuCommand extends UpdateCommand {
      */
     public SuCommand(ModuleName moduleName, UpdateModNameDescriptor updateModNameDescriptor) {
         super(moduleName, updateModNameDescriptor);
+    }
+
+    @Override
+    public boolean equals(Object other) {
+        return other instanceof SuCommand; // instanceof handles nulls
     }
 }

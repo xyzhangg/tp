@@ -58,8 +58,8 @@ public class AddCommandTest {
 
     @Test
     public void equals() {
-        Module softwareEngineering = new ModuleBuilder().withName("CS2103T Software Engineering").build();
-        Module computerOrganisation = new ModuleBuilder().withName("CS2100 Computer Organisation").build();
+        Module softwareEngineering = new ModuleBuilder().withName("CS2103T").build();
+        Module computerOrganisation = new ModuleBuilder().withName("CS2100").build();
         AddCommand addSoftwareEngineeringCommand = new AddCommand(softwareEngineering);
         AddCommand addComputerOrganisationCommand = new AddCommand(computerOrganisation);
 
@@ -171,6 +171,11 @@ public class AddCommandTest {
 
         @Override
         public int getCurrentMc() {
+            throw new AssertionError("This method should not be called.");
+        }
+
+        @Override
+        public int getMcFromSu() {
             throw new AssertionError("This method should not be called.");
         }
 

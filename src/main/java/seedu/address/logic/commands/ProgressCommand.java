@@ -44,12 +44,14 @@ public class ProgressCommand extends Command {
         GoalTarget userGoalTarget = model.getGoalTarget();
         double targetCap = GoalTarget.getUserGoalGrade(userGoalTarget);
 
-        double currentMc = model.getCurrentMc();
-        double totalMc = isDdp ? TOTAL_MODULAR_CREDIT_DDP : TOTAL_MODULAR_CREDIT;
+        int mcFromSu = model.getMcFromSu();
+        int currentGradedMc = model.getCurrentMc() - mcFromSu;
+        int totalGradedMc = isDdp ? TOTAL_MODULAR_CREDIT_DDP : TOTAL_MODULAR_CREDIT;
+        totalGradedMc -= mcFromSu;
 
-        double remainingMc = totalMc - currentMc;
-        double currentWeightedCap = currentCap * currentMc;
-        double totalWeightedCap = targetCap * totalMc;
+        double remainingMc = totalGradedMc - currentGradedMc;
+        double currentWeightedCap = currentCap * currentGradedMc;
+        double totalWeightedCap = targetCap * totalGradedMc;
 
         double requiredCap = (totalWeightedCap - currentWeightedCap) / remainingMc;
 

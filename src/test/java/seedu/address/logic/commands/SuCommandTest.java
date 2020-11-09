@@ -13,6 +13,7 @@ import static seedu.address.logic.commands.CommandTestUtil.setValidCorrectSemest
 import static seedu.address.logic.commands.CommandTestUtil.setValidWrongSemester;
 import static seedu.address.testutil.TypicalModules.COM_ORG;
 import static seedu.address.testutil.TypicalModules.EFF_COM;
+import static seedu.address.testutil.TypicalModules.GER;
 import static seedu.address.testutil.TypicalModules.getTypicalGradeBook;
 
 import org.junit.jupiter.api.Test;
@@ -61,9 +62,11 @@ public class SuCommandTest {
     }
 
     @Test
-    public void execute_invalidModuleNameUnfilteredList_failure() {
+    public void execute_moduleNameNotInGradeBookUnfilteredList_failure() {
         setValidCorrectSemester();
-        ModuleName invalidModuleName = new ModuleName("No such module");
+
+        String moduleNotInGradeBook = GER.getModuleName().fullModName;
+        ModuleName invalidModuleName = new ModuleName(moduleNotInGradeBook);
         UpdateModNameDescriptor descriptor =
                 new UpdateModNameDescriptorBuilder().withGrade(VALID_GRADE_SU).build();
         SuCommand updateCommand = new SuCommand(invalidModuleName, descriptor);
