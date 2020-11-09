@@ -404,7 +404,7 @@ target CAP. The user can include the string `ddp` to indicate if they are taking
 a double degree programme (e.g. `progress ddp`).
 \
 \
-A `ProgressCommand class` is added to commands under logic to execute the required
+A `ProgressCommand` class is added to commands under logic to execute the required
 CAP calculation. The calculation process is done as shown below:
 
  1. User enters their target CAP using `goal` command
