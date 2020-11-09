@@ -235,7 +235,13 @@ Examples:
   <strong>MyMods</strong>:100:, refer to the warning after the example usage below.
 <br>
 </div>
-
+<br>
+<div markdown="span" class="alert alert-info">
+:warning: To simulate Completed Satisfactorily/Completed Unsatisfactorily (CS/CU) grades for CS/CU modules, <strong>
+do not include parameter `[g/GRADE]` </strong> so that the grade will be reflected as N/A. Don't worry, CS/CU modules will not be included
+in your CAP calculations and, by NUS standards, S/U is not an option for CS/CU modules.
+</div>
+<br>
 To add a module (e.g. add CS1101S):
 
 1. Type `add m/CS1101S g/A+` into the command box, and press Enter to execute it.<br>
