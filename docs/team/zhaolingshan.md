@@ -12,14 +12,14 @@ Given below are my contributions to the project.
 
 * **New Feature**: Added the ability to start editing a semester.
   * What it does: allows the user to start editing a particular semester one at a time.
-  The user can add, delete, upgrade the grade or semester, and S/U modules in a semester only after the user starts that specific semester.
+  The user can add, delete, update the grade or semester, and S/U modules in a semester only after the user starts that specific semester.
   * Justification: This feature improves the product significantly because a user can edit the modules in a specific semester and keep track of the modules
   he is taking in a specific semester, and the changes he made to them. It provides a convenient way to segregate the modules in different semesters to keep it organised and enhance readability.
   * Highlights: This enhancement affects existing commands and commands to be added in the future. It required an in-depth analysis of design alternatives. The implementation too was challenging as it required changes to existing commands.
 
 * **New Feature**: Added the ability to stop editing a semester.
   * What it does: allows the user to stop editing a particular semester one at a time.
-  The user cannot add, delete, upgrade the grade or semester, and S/U modules in a semester after the user exits that specific semester.
+  The user cannot add, delete, update the grade or semester, and S/U modules in a semester after the user exits that specific semester.
   * Justification: This feature improves the product significantly because a user can stop editing the modules in a specific semester which allows the user to navigate to and make changes to the modules in a different semester.
   This allows users to make changes to the modules in different semesters. It provides a convenient way to segregate the modules in different semesters to keep it organised and enhance readability.
   Once the user is done editing a specific semester, he will be brought back to the main list of modules.

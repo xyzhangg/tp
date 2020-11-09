@@ -1,6 +1,12 @@
 package seedu.address.ui;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import java.awt.Toolkit;
+import java.awt.datatransfer.DataFlavor;
 
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -8,7 +14,11 @@ import org.junit.jupiter.api.Test;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.scene.Scene;
-import javafx.scene.layout.StackPane;
+import javafx.scene.control.Button;
+import javafx.scene.control.Hyperlink;
+import javafx.scene.input.MouseButton;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 public class HelpWindowTest extends Application {
@@ -49,9 +59,7 @@ public class HelpWindowTest extends Application {
                 + clearCommandFormat
                 + helpCommandFormat
                 + exitCommandFormat;
-
         Thread thread = new Thread(new Runnable() {
-
             @Override
             public void run() {
                 //new JFXPanel(); // Initializes the JavaFx Platform
@@ -60,16 +68,59 @@ public class HelpWindowTest extends Application {
                     @Override
                     public void run() {
                         try {
-                            HelpWindow helpWindow = null;
-                            new HelpWindowTest().start(new Stage());
-                            assertNotNull(helpWindow); // Create and
+                            new FakeApp().start(new Stage());
+                            HelpWindow helpWindow = new HelpWindow();
 
+                            //check instance of help window
+                            assertNotNull(helpWindow);
+
+                            //check that help window is hidden
+                            assertFalse(helpWindow.isShowing());
+
+                            helpWindow.show();
+
+                            //check that show() works
+                            assertTrue(helpWindow.isShowing());
+
+                            helpWindow.hide();
+
+                            //check that hide() works
+                            assertFalse(helpWindow.isShowing());
+
+                            //check help commands match
+                            assertEquals(expectedCommands, helpWindow.getHelpCommands());
+
+                            Hyperlink hyperlink = helpWindow.getHyperLink();
+
+                            //check hyperlink text
+                            assertEquals("Click for the User Guide", hyperlink.getText());
+
+                            //check help message
+                            assertEquals("OR, ", helpWindow.getHelpMessage());
+
+                            Button copyButton = helpWindow.getCopyButton();
+
+                            MouseEvent mouseEvent = new MouseEvent(MouseEvent.MOUSE_CLICKED, 0,
+                                0, 0, 0, MouseButton.PRIMARY, 1,
+                                true, true, true, true,
+                                true, true, true,
+                                true, true, true, null);
+
+                            //simulate copy button click
+                            copyButton.fire();
+
+                            String url = (String) Toolkit.getDefaultToolkit()
+                                .getSystemClipboard().getData(DataFlavor.stringFlavor);
+
+                            //check if clipboard has the link
+                            assertEquals("https://ay2021s1-cs2103t-t17-1.github.io/tp/UserGuide.html", url);
+
+                            hyperlink.fire();
+
+                            assertEquals(Color.PURPLE, hyperlink.getTextFill());
                         } catch (Exception e) {
                             e.printStackTrace();
                         }
-                        // initialize
-                        // your app.
-
                     }
                 });
             }
@@ -79,22 +130,30 @@ public class HelpWindowTest extends Application {
         // will be killed before you can tell.
     }
 
+
+    public static class FakeApp extends Application {
+        @Override
+        public void start(Stage primaryStage) throws Exception {
+            // noop
+        }
+    }
+
     @BeforeAll
     public static void initJfx() throws InterruptedException {
         Thread t = new Thread("JavaFX Init Thread") {
             public void run() {
-                Application.launch(HelpWindowTest.class, new String[0]);
+                Application.launch(FakeApp.class, new String[0]);
             }
         };
         t.setDaemon(true);
         t.start();
+        System.out.printf("FX App thread started\n");
+        Thread.sleep(500);
     }
 
     @Override
     public void start(Stage primaryStage) throws Exception {
         helpWindow = new HelpWindow(primaryStage);
-        StackPane stackPane = new StackPane();
-        DragResizer.makeResizable(stackPane);
         primaryStage.setScene(new Scene(helpWindow.getRoot().getScene().getRoot(), 100, 100));
         primaryStage.show();
     }
