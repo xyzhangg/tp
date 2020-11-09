@@ -234,6 +234,11 @@ Examples:
  <strong>This is not recommended</strong>. However, to add a module that is not recognised by
   <strong>MyMods</strong>:100:, refer to the warning after the example usage below.
 <br>
+</div><br>
+
+<div markdown="span" class="alert alert-info">
+:warning: 
+<br>
 </div>
 
 To add a module (e.g. add CS1101S):
