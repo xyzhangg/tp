@@ -213,7 +213,7 @@ SU: True
 An exception is thrown if the module is not found.
 
 Step 4: The new module constructor is executed with the following arguments,
-```new Module(“CS1101S”, “A+”, 4, "Y2S1")```. An AddCommand object is then returned with the module,
+```new Module(“CS1101S”, “A+”, 4, "Y2S1")```. An ```AddCommand``` object is then returned with the module,
 and the new module with modular credit information is saved to storage.
 
 #### Design Considerations:
