@@ -18,10 +18,10 @@ import javafx.scene.input.MouseButton;
  * This class is a TextField which implements an "autocomplete" functionality,
  * based on a supplied list of entries.
  *
- * @author Caleb Brinkman
+ * @author Caleb Brinkman-reused
  *
  * Reused from https://gist.github.com/floralvikings/10290131
- * with minor modifications by kunnan97, https://github.com/kunnan97
+ * with minor modifications by @@author kunnan97, https://github.com/kunnan97
  */
 public class AutoCompleteTextField extends TextField {
     /** The existing autocomplete entries. */
