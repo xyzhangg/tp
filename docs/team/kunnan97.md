@@ -24,7 +24,7 @@ Given below are my contributions to the project.
 * **Code contributed**: [RepoSense link](https://nus-cs2103-ay2021s1.github.io/tp-dashboard/#breakdown=true&search=&sort=groupTitle&sortWithin=title&since=2020-08-14&timeframe=commit&mergegroup=&groupSelect=groupByRepos&checkedFileTypes=docs~functional-code~test-code~other&tabOpen=true&tabType=authorship&tabAuthor=kunnan97&tabRepo=AY2021S1-CS2103T-T17-1%2Ftp%5Bmaster%5D&authorshipIsMergeGroup=false&authorshipFileTypes=docs~functional-code~test-code~other)
 
 * **Project management**:
-  * Managed releases `v1.2` - `v1.4` (4 releases) on GitHub
+  * Managed releases `v1.3(trial)` - `v1.4` (4 releases) on GitHub
 
 * **Enhancements to existing features**:
   * Removed, `Phone`, `Tag` and `email` classes from original AB3. 
@@ -45,7 +45,7 @@ Given below are my contributions to the project.
   * User Guide:
     * Converted the collaborative document to markdown plus cosmetic tweaks
     (Refer to [Reposense link for documentation](https://nus-cs2103-ay2021s1.github.io/tp-dashboard/#breakdown=true&search=&sort=groupTitle&sortWithin=title&since=2020-08-14&until=2020-11-09&timeframe=commit&mergegroup=&groupSelect=groupByRepos&checkedFileTypes=docs~functional-code~test-code~other&tabOpen=true&tabType=authorship&tabAuthor=kunnan97&tabRepo=AY2021S1-CS2103T-T17-1%2Ftp%5Bmaster%5D&authorshipIsMergeGroup=false&authorshipFileTypes=docs))
-    * Contributed documentation to the features [`goal`](https://ay2021s1-cs2103t-t17-1.github.io/tp/UserGuide.html#Set_Goals) and [`delete`](https://ay2021s1-cs2103t-t17-1.github.io/tp/UserGuide.html#Delete_Module) and summary table, work is done on Google Document collaboratively.
+    * Contributed documentation to the features [`goal`](https://ay2021s1-cs2103t-t17-1.github.io/tp/UserGuide.html#Set_Goals) and [`delete`](https://ay2021s1-cs2103t-t17-1.github.io/tp/UserGuide.html#Delete_Module) and [summary table](https://ay2021s1-cs2103t-t17-1.github.io/tp/UserGuide.html#Summary_of_Key_Features), work is done on Google Document collaboratively.
 
   * Developer Guide:
     * Converted the collaborative document to markdown plus cosmetic tweaks

@@ -294,8 +294,8 @@ provided.
 #### Implementation
 
 The dark and light mode switch is part of the UI implementation that allows the user to instantly switch between two
-different styles of the application. It is facilitated by the ```MainWindow component``` in the
-UI component and the ```Scene``` object from the ```Stage``` object(private property in ```MainWindow```).
+different styles of the application. It is facilitated by the ```MainWindow``` component in the
+```UI``` component and the ```Scene``` object from the ```Stage``` object(private property in ```MainWindow```).
 **The stylesheet property in the ```Scene``` object is manipulated**. The two different stylings are supplied by
 two CSS files that contain CSS styling for both dark and light mode separately.
 
@@ -404,7 +404,7 @@ target CAP. The user can include the string `ddp` to indicate if they are taking
 a double degree programme (e.g. `progress ddp`).
 \
 \
-A `ProgressCommand class` is added to commands under logic to execute the required
+A `ProgressCommand` class is added to commands under logic to execute the required
 CAP calculation. The calculation process is done as shown below:
 
  1. User enters their target CAP using `goal` command
@@ -458,6 +458,7 @@ Aspect: how does the user input their desired CAP.
        Expected: The most recent window size and location is retained.<br><br>
 
 [Back to top](#top)
+
 
 ### Adding a module <a name="Adding_a_module"></a>
 
