@@ -14,6 +14,9 @@ import javafx.event.EventType;
 import javafx.stage.Stage;
 import seedu.address.model.module.Module;
 
+/**
+ * Tests for MaxSizedContextMenuTest
+ */
 public class MaxSizedContextMenuTest {
 
     @Test

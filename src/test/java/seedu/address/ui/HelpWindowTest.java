@@ -21,6 +21,9 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
+/**
+ * Tests for HelpWindow
+ */
 public class HelpWindowTest extends Application {
 
     private static final String startCommandFormat = "start SEMESTER\n\n";
@@ -126,7 +129,8 @@ public class HelpWindowTest extends Application {
             }
         });
         thread.start(); // Initialize the thread
-        Thread.sleep(10000); // Time to use the app, with out this, the thread
+        Thread.sleep(100); // Time to use the app, with out this, the thread
+        // will be killed before you can tell.
     }
 
 
