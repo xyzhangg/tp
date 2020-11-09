@@ -10,6 +10,9 @@ import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.stage.Stage;
 
+/**
+ * Tests for ResultDisplayTest
+ */
 public class ResultDisplayTest {
 
     private static final String DISPLAY_MESSAGE = "This module already exists in your module list.";

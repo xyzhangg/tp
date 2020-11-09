@@ -14,6 +14,9 @@ import javafx.stage.Stage;
 import seedu.address.model.module.Module;
 import seedu.address.testutil.TypicalModules;
 
+/**
+ * Tests for ModuleCardTest
+ */
 public class ModuleCardTest {
 
     @Test
