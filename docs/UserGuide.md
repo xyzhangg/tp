@@ -178,7 +178,7 @@ Command | Format
 `su` | `su MODULE_CODE`
 `delete` | `delete MODULE_CODE`
 `done` | `done`
-`find` | `find KEYWORD`
+`find` | `find KEYWORD [KEYWORD]...`
 `progress` | `progress [ddp]`
 `clear` | `clear`
 `help` | `help`
@@ -233,6 +233,11 @@ Examples:
 :warning: Use of parameter `[mc/MODULAR_CREDITS]` is to manually add modules that are not in our database.
  <strong>This is not recommended</strong>. However, to add a module that is not recognised by
   <strong>MyMods</strong>:100:, refer to the warning after the example usage below.
+<br>
+</div><br>
+
+<div markdown="span" class="alert alert-info">
+:warning: 
 <br>
 </div>
 
