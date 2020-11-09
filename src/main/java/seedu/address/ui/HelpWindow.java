@@ -85,7 +85,7 @@ public class HelpWindow extends UiPart<Stage> {
         handleLinkClicked();
     }
 
-    public static String getHelpMessage() {
+    public String getHelpMessage() {
         return HELP_MESSAGE;
     }
 

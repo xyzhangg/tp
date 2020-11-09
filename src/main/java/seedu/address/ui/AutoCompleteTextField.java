@@ -95,6 +95,10 @@ public class AutoCompleteTextField extends TextField {
         return entries;
     }
 
+    public ContextMenu getEntriesPopup() {
+        return entriesPopup;
+    }
+
     /**
      * Populate the entry set with the given search results.  Display is limited to 10 entries, for performance.
      * @param searchResult The set of matching strings.
