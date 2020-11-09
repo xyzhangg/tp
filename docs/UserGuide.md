@@ -236,11 +236,6 @@ Examples:
 <br>
 </div><br>
 
-<div markdown="span" class="alert alert-info">
-:warning: 
-<br>
-</div>
-
 To add a module (e.g. add CS1101S):
 
 1. Type `add m/CS1101S g/A+` into the command box, and press Enter to execute it.<br>
