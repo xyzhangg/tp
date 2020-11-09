@@ -211,7 +211,12 @@ public class ModelManager implements Model {
 
     @Override
     public int getCurrentMc() {
-        return McCalculator.calculateMc(filteredModules);
+        return McCalculator.calculateMcTaken(filteredModules);
+    }
+
+    @Override
+    public int getMcFromSu() {
+        return McCalculator.calculateMcFromSu(filteredModules);
     }
 
     //=========== Goal Setting ===============================================================================

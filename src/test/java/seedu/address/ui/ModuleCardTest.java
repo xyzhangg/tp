@@ -3,21 +3,21 @@ package seedu.address.ui;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-import java.nio.file.Paths;
-
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import javafx.application.Application;
 import javafx.application.Platform;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.stage.Stage;
 import seedu.address.model.module.Module;
 import seedu.address.testutil.TypicalModules;
 
-public class StatusBarFooterTest {
+public class ModuleCardTest {
 
     @Test
-    public void generateStatusBarFooter_success() throws InterruptedException {
+    public void generateModuleCardsWithValidModules_success() throws InterruptedException {
         Thread thread = new Thread(new Runnable() {
             @Override
             public void run() {
@@ -55,8 +55,10 @@ public class StatusBarFooterTest {
                     public void run() {
                         try {
                             new FakeApp().start(new Stage());
-                            StatusBarFooter statusBarFooter = new StatusBarFooter(Paths.get("PathStub"));
-                            assertNotNull(statusBarFooter);
+                            ObservableList<Module> observableModuleList = FXCollections.observableArrayList();
+                            ModuleListPanel resultDisplay = new ModuleListPanel(observableModuleList);
+
+                            assertNotNull(resultDisplay);
                         } catch (Exception e) {
                             e.printStackTrace();
                         }

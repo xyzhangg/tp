@@ -118,9 +118,14 @@ public interface Model {
     String generateSem();
 
     /**
-     * Returns the total number of MCs as an integer .
+     * Returns the total number of MCs as an integer.
      */
     int getCurrentMc();
+
+    /**
+     * Returns total number of MCs that are S/U-ed.
+     */
+    int getMcFromSu();
 
     void setGoalTarget(GoalTarget goalTarget);
 

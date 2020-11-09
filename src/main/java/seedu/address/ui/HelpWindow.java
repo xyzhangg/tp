@@ -35,7 +35,7 @@ public class HelpWindow extends UiPart<Stage> {
     private static final String suCommandFormat = "su MODULE_CODE\n\n";
     private static final String deleteCommandFormat = "delete MODULE_CODE\n\n";
     private static final String doneCommandFormat = "done\n\n";
-    private static final String findCommandFormat = "find KEYWORD\n\n";
+    private static final String findCommandFormat = "find KEYWORD [KEYWORD]...\n\n";
     private static final String progressCommandFormat = "progress [ddp]\n\n";
     private static final String clearCommandFormat = "clear\n\n";
     private static final String helpCommandFormat = "help\n\n";

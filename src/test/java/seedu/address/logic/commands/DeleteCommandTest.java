@@ -11,6 +11,7 @@ import static seedu.address.logic.commands.CommandTestUtil.showModuleAtIndex;
 import static seedu.address.testutil.Assert.assertThrows;
 import static seedu.address.testutil.TypicalModules.COM_ORG;
 import static seedu.address.testutil.TypicalModules.EFF_COM;
+import static seedu.address.testutil.TypicalModules.GER;
 import static seedu.address.testutil.TypicalModules.getTypicalGradeBook;
 
 import org.junit.jupiter.api.Test;
@@ -65,10 +66,11 @@ public class DeleteCommandTest {
     }
 
     @Test
-    public void execute_invalidModuleNameUnfilteredList_throwsCommandException() {
+    public void execute_moduleCodeNotInListUnfilteredList_throwsCommandException() {
         setValidCorrectSemester();
 
-        ModuleName invalidModuleName = new ModuleName("invalid mod");
+        String moduleNotInList = GER.getModuleName().fullModName;
+        ModuleName invalidModuleName = new ModuleName(moduleNotInList);
         DeleteCommand deleteCommand = new DeleteCommand(invalidModuleName);
 
         assertCommandFailure(deleteCommand, model, Messages.MESSAGE_INVALID_MODULE_DISPLAYED_NAME);
