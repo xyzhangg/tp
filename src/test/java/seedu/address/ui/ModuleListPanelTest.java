@@ -15,6 +15,9 @@ import javafx.stage.Stage;
 import seedu.address.model.module.Module;
 import seedu.address.testutil.TypicalModules;
 
+/**
+ * Tests for ModuleListPanelTest
+ */
 public class ModuleListPanelTest {
 
     @Test

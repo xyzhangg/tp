@@ -21,6 +21,9 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
+/**
+ * Tests for HelpWindow
+ */
 public class HelpWindowTest extends Application {
 
     private static final String startCommandFormat = "start SEMESTER\n\n";
