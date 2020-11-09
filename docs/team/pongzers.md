@@ -22,11 +22,13 @@ Given below are my contributions to the project.
 
 * **Enhancements to existing features**:
   * Updated the GUI to display the semester the user is currently editing (Pull request [\#205](https://github.com/AY2021S1-CS2103T-T17-1/tp/pull/205))
-
+  * Wrote additional tests for existing features to increase coverage by 4% (Pull requests [\#276](https://github.com/AY2021S1-CS2103T-T17-1/tp/pull/276), [\#281](https://github.com/AY2021S1-CS2103T-T17-1/tp/pull/281))
+  
 * **Documentation**:
   * User Guide:
-    * Added documentation for the features `list` and `add`
+    * Added documentation for the features `list` and `add`.
   * Developer Guide:
+    * Added implementation feature of obtaining module information automatically.
     * Generated skeleton of developer guide for team members to use.
 
 * **Tools**:

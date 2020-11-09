@@ -76,7 +76,7 @@ public class HelpWindowTest extends Application {
             }
         });
         thread.start(); // Initialize the thread
-        Thread.sleep(10000); // Time to use the app, with out this, the thread
+        Thread.sleep(100); // Time to use the app, with out this, the thread
         // will be killed before you can tell.
     }
 

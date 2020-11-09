@@ -7,20 +7,18 @@ import javafx.collections.ObservableList;
 import javafx.stage.Stage;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+
 import seedu.address.model.module.Module;
 import seedu.address.testutil.TypicalModules;
 
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertNotEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-
-public class StatusBarFooterTest {
+public class ModuleListPanelTest {
 
     @Test
-    public void generateStatusBarFooter_success() throws InterruptedException {
+    public void generateModuleListPanelWithAllModules_success() throws InterruptedException {
         Thread thread = new Thread(new Runnable() {
             @Override
             public void run() {
@@ -29,14 +27,11 @@ public class StatusBarFooterTest {
                     public void run() {
                         try {
                             new FakeApp().start(new Stage());
-                            Module sweModule = TypicalModules.SWE;
-                            Module algoModule = TypicalModules.ALGO;
-                            ModuleCard sweModuleCard = new ModuleCard(sweModule, 1);
-                            ModuleCard algoModuleCard = new ModuleCard(algoModule, 1);
+                            List<Module> moduleList = TypicalModules.getTypicalModules();
+                            ObservableList<Module> observableModuleList = FXCollections.observableArrayList(moduleList);
+                            ModuleListPanel resultDisplay = new ModuleListPanel(observableModuleList);
 
-                            assertNotNull(sweModuleCard);
-                            assertNotNull(algoModuleCard);
-                            assertNotEquals(sweModuleCard, algoModuleCard); //checking of equality comparator
+                            assertNotNull(resultDisplay);
                         } catch (Exception e) {
                             e.printStackTrace();
                         }
@@ -58,8 +53,39 @@ public class StatusBarFooterTest {
                     public void run() {
                         try {
                             new FakeApp().start(new Stage());
-                            StatusBarFooter statusBarFooter = new StatusBarFooter(Paths.get("PathStub"));
-                            assertNotNull(statusBarFooter);
+                            ObservableList<Module> observableModuleList = FXCollections.observableArrayList();
+                            ModuleListPanel resultDisplay = new ModuleListPanel(observableModuleList);
+
+                            assertNotNull(resultDisplay);
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
+                });
+            }
+        });
+        thread.start(); // Initialize the thread
+        Thread.sleep(1000); // Time to use the app, with out this, the thread
+    }
+
+    @Test
+    public void generateModuleListViewCellWithValidModule_success() throws InterruptedException {
+        Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                Platform.runLater(new Runnable() {
+                    @Override
+                    public void run() {
+                        try {
+                            new FakeApp().start(new Stage());
+                            Module validModule = TypicalModules.SWE;
+                            ObservableList<Module> observableModuleList = FXCollections.observableArrayList();
+                            ModuleListPanel resultDisplay = new ModuleListPanel(observableModuleList);
+                            ModuleListPanel.ModuleListViewCell moduleListViewCell =
+                                    resultDisplay.new ModuleListViewCell();
+                            moduleListViewCell.updateItem(validModule, false);
+
+                            assertNotNull(moduleListViewCell);
                         } catch (Exception e) {
                             e.printStackTrace();
                         }
