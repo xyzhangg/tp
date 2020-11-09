@@ -294,8 +294,8 @@ provided.
 #### Implementation
 
 The dark and light mode switch is part of the UI implementation that allows the user to instantly switch between two
-different styles of the application. It is facilitated by the ```MainWindow component``` in the
-UI component and the ```Scene``` object from the ```Stage``` object(private property in ```MainWindow```).
+different styles of the application. It is facilitated by the ```MainWindow``` component in the
+```UI``` component and the ```Scene``` object from the ```Stage``` object(private property in ```MainWindow```).
 **The stylesheet property in the ```Scene``` object is manipulated**. The two different stylings are supplied by
 two CSS files that contain CSS styling for both dark and light mode separately.
 
