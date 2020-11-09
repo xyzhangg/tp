@@ -237,13 +237,8 @@ Examples:
 </div><br>
 
 <div markdown="span" class="alert alert-info">
-:warning: 
-<br>
-</div>
-<br>
-<div markdown="span" class="alert alert-info">
 :warning: To simulate Completed Satisfactorily/Completed Unsatisfactorily (CS/CU) grades for CS/CU modules, <strong>
-do not include parameter `[g/GRADE]` </strong> so that the grade will be reflected as N/A. Don't worry, CS/CU modules will not be included
+do not include parameter `[g/GRADE]` </strong> so that the grade will be reflected as NA. Don't worry, CS/CU modules will not be included
 in your CAP calculations and, by NUS standards, S/U is not an option for CS/CU modules.
 </div>
 <br>

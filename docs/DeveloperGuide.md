@@ -194,10 +194,10 @@ It implements the following operation:
 Given below is an example usage scenario and how obtaining module information is used and integrated into
 the ```add``` command.
 
-Step 1: The users executes ```add --mod CS1101S --grade A+```.
+Step 1: The user executes ```add m/CS1101S g/A+```.
 
 Step 2: Logic uses the ```AddCommandParser``` class to parse the command.
-```AddCommandParser#parse(“add --mod CS1101S --grade A+”)``` is executed, which then executes
+```AddCommandParser#parse(“add m/CS1101S g/A+”)``` is executed, which then executes
 ```(ModuleInfoRetriever#retrieve(“CS1101S”)``` to retrieve the number of modular credits CS1101S has.
 
 Step 3: During the call of ```ModuleInfoRetriever#retrieve(“CS1101S”)``` , it parses the JSON file
@@ -213,7 +213,7 @@ SU: True
 An exception is thrown if the module is not found.
 
 Step 4: The new module constructor is executed with the following arguments,
-```new Module(“CS1101S”, “A+”, 4, "Y2S1")```. An AddCommand object is then returned with the module,
+```new Module(“CS1101S”, “A+”, 4, "Y2S1")```. An ```AddCommand``` object is then returned with the module,
 and the new module with modular credit information is saved to storage.
 
 #### Design Considerations:
@@ -410,7 +410,7 @@ CAP calculation. The calculation process is done as shown below:
  1. User enters their target CAP using `goal` command
  2. Info about current CAP and MCs taken are retrieved from the `ModelManager` class
  3. Total MCs required is determined by whether user is in double degree programme
- or not (e.g. user input is `progress ddp` or `just progress`)
+ or not (e.g. user input is `progress ddp` or just `progress`)
  4. Target CAP is retrieved from the `ModelManager` class
  5. Required CAP from remaining modules is calculated.
 
@@ -449,10 +449,10 @@ Aspect: how does the user input their desired CAP.
 
 ### Launch and shutdown <a name="Launch_and_shutdown"></a>
 
-1. Initial launch
+1. Initial launch<br>
     a. Download the jar file and copy into an empty folder.<br><br>
     b. Double-click the jar file Expected: Shows the GUI. The window size may not be optimum.<br><br>
-2. Saving window preferences
+2. Saving window preferences<br>
     a. Resize the window to an optimum size. Move the window to a different location. Close the window.<br><br>
     b. Re-launch the app by double-clicking the jar file.<br>
        Expected: The most recent window size and location is retained.<br><br>
@@ -461,7 +461,7 @@ Aspect: how does the user input their desired CAP.
 
 ### Adding a module <a name="Adding_a_module"></a>
 
-1. Adding a module while editing a semester
+1. Adding a module while editing a semester<br>
     a. Prerequisites: Start editing a semester using the `start` command.<br>
      Currently editing a valid semester with no modules in the entire app added yet.<br><br>
     b. Test case: `add m/CS1231S g/A`<br>
@@ -476,7 +476,7 @@ Aspect: how does the user input their desired CAP.
       Expected: Invalid command format.<br><br>
     g. Other incorrect add commands to try: `add`, `add mod/GEQ1000`, `…`<br>
       Expected: Similar to previous.<br><br>
-2. Adding a module while not editing any semesters
+2. Adding a module while not editing any semesters<br>
     a. Prerequisites: Not editing any semesters. (The status bar shows “Currently editing: NA”)<br><br>
     b. Test case: `add m/GEQ1000`<br>
        Expected: Unable to add module as no semester is being edited,
@@ -486,7 +486,7 @@ Aspect: how does the user input their desired CAP.
 
 ### Updating/SU-ing a module <a name="Updating/SU-ing_a_module"></a>
 
-1. Updating a module while editing a semester
+1. Updating a module while editing a semester<br>
     a. Prerequisites: Start editing a semester using the `start` command, and add the module “CS1101S”, with Grade “A”.
      Currently editing a valid semester with the module “CS1101S (4MCs) Grade: A” added inside.<br><br>
     b. Test case: `update m/CS1101S g/B+`<br>
@@ -495,14 +495,14 @@ Aspect: how does the user input their desired CAP.
       Expected: Successfully updates the grade of “CS1101S” to “SU”.<br><br>
     d. Test case: `update m/ST2334 g/B+`<br>
        Expected: Unable to update any module as the module name provided is invalid.<br><br>
-    e. Other incorrect update commands to try: `update`, `update ST2334`, `...`
+    e. Other incorrect update commands to try: `update`, `update ST2334`, `...`<br>
        Expected: Invalid command format.<br><br>
-2. Updating a module from another semester
+2. Updating a module from another semester<br>
     a. Prerequisites: Currently editing the semester “Y2S1”. A module was previously added in another semester.
      e.g. the module “CS1101S” was previously added in semester “Y1S1”.<br><br>
     b. Test case: `update m/CS1101S g/B+`<br>
        Expected: Unable to update module as the module you are trying to update is in another semester.<br><br>
-3. Updating a module while not editing any semesters
+3. Updating a module while not editing any semesters<br>
     a. Prerequisites: Not editing any semesters. (The status bar shows “Currently editing: NA”)<br><br>
     b. Test case: `update m/CS1101S g/B+`<br>
        Expected: Unable to update any module as no semester is being edited,
@@ -514,7 +514,7 @@ Aspect: how does the user input their desired CAP.
 
 ### Recommending modules to SU <a name="Recommending_modules_to_SU"></a>
 
-1. Recommending modules to SU with valid modules to SU.
+1. Recommending modules to SU with valid modules to SU<br>
     a. Prerequisites: A goal has been previously set using `goal set`. For the purpose of the test cases below,
      we would be assuming the current goal set is 1. (i.e. the command `goal set 1` was entered).
       There are currently 2 modules added and listed, “CS1101S (4MCs), Grade: C+”, and “CS1231S (4MCs), Grade: A”.<br><br>
@@ -524,7 +524,7 @@ Aspect: how does the user input their desired CAP.
        Expected: Invalid command format, as there should be no input after recommendSU.<br><br>
     d. Other incorrect recommendSU commands to try: `recommendSU all`, `recommendSU CAP5`, `…`<br>
        Expected: Similar to previous.<br><br>
-2. Recommending modules to SU with no valid modules to SU
+2. Recommending modules to SU with no valid modules to SU<br>
     a. Prerequisites: A goal has been previously set using `goal set`. For the purpose of the test cases below, we would
      be assuming the current goal set is 1. (i.e. the command `goal set 1` was entered). There are currently no modules added.<br><br>
     b. Test case: `recommendSU`<br>

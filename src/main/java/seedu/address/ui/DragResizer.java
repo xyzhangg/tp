@@ -14,7 +14,8 @@ import javafx.scene.layout.Region;
  * <p>
  * Only height resizing is currently implemented. Usage: <pre>DragResizer.makeResizable(myAnchorPane);</pre>
  *
- * @author atill
+ * @author atill-reused
+ *
  * Reused from http://andrewtill.blogspot.com/2012/12/dragging-to-resize-javafx-region.html
  */
 public class DragResizer {

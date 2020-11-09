@@ -35,6 +35,11 @@ Given below are my contributions to the project.
   [\#76](https://github.com/AY2021S1-CS2103T-T17-1/tp/pull/76)
   * Added GUI box to display CAP
   [\#58](https://github.com/AY2021S1-CS2103T-T17-1/tp/pull/58)
+  * Added command summary and hyperlinks to our User Guide in help window.
+  [\#2258](https://github.com/AY2021S1-CS2103T-T17-1/tp/pull/258)
+  * Added alert dialog to prompt confirmation to users for clear command
+  [\#238](https://github.com/AY2021S1-CS2103T-T17-1/tp/pull/238)
+  * Allow result display box to be resizable from the bottom
 
 * **Documentation**:
   * User Guide:
