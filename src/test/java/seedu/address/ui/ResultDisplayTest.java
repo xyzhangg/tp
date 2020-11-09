@@ -60,3 +60,4 @@ public class ResultDisplayTest {
         Thread.sleep(500);
     }
 }
+

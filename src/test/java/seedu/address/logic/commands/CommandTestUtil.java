@@ -61,6 +61,7 @@ public class CommandTestUtil {
 
     public static final String INVALID_MOD_NAME_DESC = " " + PREFIX_MOD_NAME + "C&2100"; // '&' not allowed in mod names
     public static final String INVALID_GRADE_DESC = " " + PREFIX_GRADE; // empty string not allowed for GRADES
+    public static final String INVALID_MOD_NAME_B = "CS21@0"; // '@' not allowed in mod names
     public static final int INVALID_GOAL_TARGET = -1;
     public static final Semester INVALID_SEMESTER = Semester.NA;
     public static final String INVALID_INPUT_FOR_ONE_WORD_COMMAND = "hi";

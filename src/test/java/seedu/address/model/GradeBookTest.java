@@ -19,6 +19,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import seedu.address.model.module.Module;
 import seedu.address.model.module.exceptions.DuplicateModuleException;
+import seedu.address.model.util.SampleDataUtil;
 import seedu.address.testutil.ModuleBuilder;
 
 public class GradeBookTest {
@@ -40,6 +41,14 @@ public class GradeBookTest {
         GradeBook newData = getTypicalGradeBook();
         gradeBook.resetData(newData);
         assertEquals(newData, gradeBook);
+    }
+
+    @Test
+    public void resetData_withEmptySampleGradeBook_replacesData() {
+        ReadOnlyGradeBook sampleGradeBook = SampleDataUtil.getSampleGradeBook();
+        gradeBook.addModule(COM_ORG);
+        gradeBook.resetData(sampleGradeBook);
+        assertEquals(sampleGradeBook, gradeBook);
     }
 
     @Test

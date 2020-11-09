@@ -2,6 +2,7 @@ package seedu.address.model.util;
 
 import java.util.List;
 
+import seedu.address.model.module.Cap;
 import seedu.address.model.module.Grade;
 import seedu.address.model.module.Module;
 
@@ -25,7 +26,7 @@ public class CapCalculator {
         double totalPoints = 0.0;
         int totalModularCredits = 0;
         for (Module m : moduleList) {
-            if (m.hasGrade() && m.getGrade().toString() != "SU") {
+            if (m.hasGrade() && !m.getGrade().toString().equals(Cap.SU.toString())) {
                 int modularCredit = m.getModularCredit().modularCredit;
                 Grade currentGrade = m.getGrade();
                 double currentGradePoint = currentGrade.getGradePoint();

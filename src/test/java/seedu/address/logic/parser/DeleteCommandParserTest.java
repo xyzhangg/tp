@@ -1,5 +1,8 @@
 package seedu.address.logic.parser;
 
+import static seedu.address.logic.commands.CommandTestUtil.INVALID_MOD_NAME_B;
+import static seedu.address.logic.commands.CommandTestUtil.VALID_MOD_NAME_B;
+import static seedu.address.logic.parser.CommandParserTestUtil.assertParseFailure;
 import static seedu.address.logic.parser.CommandParserTestUtil.assertParseSuccess;
 import static seedu.address.testutil.TypicalModules.COM_ORG;
 
@@ -18,11 +21,17 @@ import seedu.address.model.module.ModuleName;
 public class DeleteCommandParserTest {
 
     private DeleteCommandParser parser = new DeleteCommandParser();
+
     private final ModuleName moduleName = COM_ORG.getModuleName();
-    private final String userInputModuleName = "CS2100";
 
     @Test
     public void parse_validArgs_returnsDeleteCommand() {
-        assertParseSuccess(parser, userInputModuleName, new DeleteCommand(moduleName));
+        assertParseSuccess(parser, VALID_MOD_NAME_B, new DeleteCommand(moduleName));
+    }
+
+    @Test
+    public void parse_invalidArgs_failure() {
+
+        assertParseFailure(parser, INVALID_MOD_NAME_B, ModuleName.MESSAGE_CONSTRAINTS);
     }
 }

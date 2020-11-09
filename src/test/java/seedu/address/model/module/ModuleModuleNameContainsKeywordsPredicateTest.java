@@ -46,19 +46,19 @@ public class ModuleModuleNameContainsKeywordsPredicateTest {
         // One keyword
         ModuleNameContainsKeywordsPredicate predicate =
                 new ModuleNameContainsKeywordsPredicate(Collections.singletonList("CS2100"));
-        assertTrue(predicate.test(new ModuleBuilder().withName("CS2100 Computer Organisation").build()));
+        assertTrue(predicate.test(new ModuleBuilder().withName("CS2100").build()));
 
         // Multiple keywords
-        predicate = new ModuleNameContainsKeywordsPredicate(Arrays.asList("CS2100", "Computer"));
-        assertTrue(predicate.test(new ModuleBuilder().withName("CS2100 Computer Organisation").build()));
+        predicate = new ModuleNameContainsKeywordsPredicate(Arrays.asList("CS2100", "CS"));
+        assertTrue(predicate.test(new ModuleBuilder().withName("CS2100").build()));
 
         // Only one matching keyword
-        predicate = new ModuleNameContainsKeywordsPredicate(Arrays.asList("CS2100", "Computing"));
-        assertTrue(predicate.test(new ModuleBuilder().withName("CS2100 Computer Organisation").build()));
+        predicate = new ModuleNameContainsKeywordsPredicate(Arrays.asList("CS2100", "SC"));
+        assertTrue(predicate.test(new ModuleBuilder().withName("CS2100").build()));
 
         // Mixed-case keywords
-        predicate = new ModuleNameContainsKeywordsPredicate(Arrays.asList("cS2100", "cOmPutEr"));
-        assertTrue(predicate.test(new ModuleBuilder().withName("CS2100 Computer Organisation").build()));
+        predicate = new ModuleNameContainsKeywordsPredicate(Arrays.asList("cS2100", "sC"));
+        assertTrue(predicate.test(new ModuleBuilder().withName("CS2100").build()));
     }
 
     @Test
@@ -66,11 +66,11 @@ public class ModuleModuleNameContainsKeywordsPredicateTest {
         // Zero keywords
         ModuleNameContainsKeywordsPredicate predicate =
                 new ModuleNameContainsKeywordsPredicate(Collections.emptyList());
-        assertFalse(predicate.test(new ModuleBuilder().withName("CS2100 Computer Organisation").build()));
+        assertFalse(predicate.test(new ModuleBuilder().withName("CS2100").build()));
 
         // Non-matching keyword
-        predicate = new ModuleNameContainsKeywordsPredicate(Arrays.asList("Computing"));
-        assertFalse(predicate.test(new ModuleBuilder().withName("CS2100 Computer Organisation").build()));
+        predicate = new ModuleNameContainsKeywordsPredicate(Arrays.asList("ma"));
+        assertFalse(predicate.test(new ModuleBuilder().withName("CS2100").build()));
 
         // Keywords match grade, but does not match module name
         predicate = new ModuleNameContainsKeywordsPredicate(Arrays.asList("CS2103", "A+"));
